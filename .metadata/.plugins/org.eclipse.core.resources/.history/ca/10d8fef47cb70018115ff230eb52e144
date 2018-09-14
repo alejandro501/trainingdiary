@@ -1,0 +1,10 @@
+package com.trainingdiary.domain;
+
+import java.time.LocalDateTime;
+
+public class Training {
+	private User user;
+	private LocalDateTime localDateTime;
+	private TraininType trainingType;
+
+}

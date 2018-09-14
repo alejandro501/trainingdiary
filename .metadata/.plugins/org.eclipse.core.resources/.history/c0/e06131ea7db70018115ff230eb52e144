@@ -1,0 +1,12 @@
+package com.trainingdiary.domain;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+
+public class Training {
+	private User user;
+	private LocalDateTime localDateTime;
+	private TrainingType trainingType;
+	private Duration duration;
+	private Map<Exercise, Integer> setsReps;
+}

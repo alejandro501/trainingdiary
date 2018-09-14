@@ -1,0 +1,5 @@
+package com.trainingdiary.domain;
+
+public class Training {
+
+}

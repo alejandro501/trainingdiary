@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<head>
+<title th:text="${pageTitle}">This is the page title.</title>
+</head>
+<body>
+	<article th:each="training":${trainings}>
+		
+	</article>
+</body>
+</html>

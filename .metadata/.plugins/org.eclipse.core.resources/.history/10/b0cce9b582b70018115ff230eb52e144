@@ -1,0 +1,41 @@
+package com.trainingdiary.domain;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+
+public class Training {
+	private User user;
+	private LocalDateTime localDateTime;
+	private TrainingType trainingType;
+	private int hour;
+	private int minutes;
+	
+	public Training(User user, LocalDateTime localDateTime, TrainingType trainingType, int hour, int minutes) {
+		super();
+		this.user = user;
+		this.localDateTime = localDateTime;
+		this.trainingType = trainingType;
+		this.hour = hour;
+		this.minutes = minutes;
+	}
+
+	public User getUser() {
+		return user;
+	}
+	
+	public LocalDateTime getLocalDateTime() {
+		return localDateTime;
+	}
+	
+	public TrainingType getTrainingType() {
+		return trainingType;
+	}
+	
+	public User getHour() {
+		return user;
+	}
+	
+	public User getMinutes() {
+		return user;
+	}
+}

@@ -1,0 +1,28 @@
+package com.trainingdiary.controller;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.trainingdiary.domain.*;
+
+@Controller
+public class HomeController {
+	
+	private ArrayList<Training> getTrainings(){
+		ArrayList<Training> trainings = new ArrayList<>();
+		trainings.add(new Training(new User("Alex"), LocalDateTime.now(), TrainingType.CALISTHENICS, Duration.ofMinutes(57)));
+		trainings.add(new Training(new User("Camilla"), LocalDateTime.now(), TrainingType.CALISTHENICS, Duration.ofMinutes(57)));
+		
+		return trainings;
+	}
+	@RequestMapping("/")
+	public String trainings(Model model) {
+		model.addAttribute("pageTitle", "Training Diary");
+		return "trainings";
+	}
+}

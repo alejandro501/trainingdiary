@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+<title th:text="${pageTitle}">This is the page title.</title>
+</head>
+<body>
+	<article th:each="training:${trainings}">
+		<h1 th:text="${training.user.getName()}">User</h1>
+		<h1 th:text="${training.localDateTime}">Date and time</h1>
+		<h1 th:text="${training.trainingType}">Training type</h1>
+		<h1 th:text="${training.user}">User</h1>
+		<h1 th:text="${training.duration}">Duration</h1>
+	</article>
+</body>
+</html>

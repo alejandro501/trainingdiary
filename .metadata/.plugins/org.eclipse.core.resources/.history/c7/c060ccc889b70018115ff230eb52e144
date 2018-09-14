@@ -1,0 +1,4 @@
+<article>
+	<h1 th:text="${error}">Error message</h1>
+	<p></p>
+</article>

@@ -1,0 +1,21 @@
+package com.trainingdiary.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.trainingdiary.domain.Training;
+
+@Controller
+public class HomeController {
+	
+	private ArrayList<Training> trainingDiaries = new ArrayList<>();
+	
+	@RequestMapping("/")
+	public String trainings(Model model) {
+		model.addAttribute("pageTitle", "Training Diary");
+		return "trainings";
+	}
+}

@@ -1,0 +1,6 @@
+package com.trainingdiary.controller;
+
+@RestController
+public class HomeController {
+	
+}

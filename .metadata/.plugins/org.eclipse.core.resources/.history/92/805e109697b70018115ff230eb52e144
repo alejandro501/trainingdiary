@@ -1,0 +1,50 @@
+package com.trainingdiary.controller;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.trainingdiary.domain.*;
+
+@Controller
+public class HomeController {
+	
+	@RequestMapping("/")
+	public String trainings(Model model) {
+		model.addAttribute("pageTitle", "Training Diary");
+		model.addAttribute("trainings", getTrainings());
+		return "trainings";
+	}
+	
+	@RequestMapping("/user/{user_id}")
+	public String searchForUser(@PathVariable(value="user_id") String id) {
+		if(id == null) {
+			throw new IllegalArgumentException("No user with this id. ");
+		}
+		
+		return null;
+	}
+	
+	@ExceptionHandler(Exception.class)
+	public String exceptionHandler(HttpServletRequest rA, Exception ex, Model model) {
+		model.addAttribute("errorMessage", ex.getMessage());
+		return "exceptionHandler";
+	}
+	
+	private ArrayList<Training> getTrainings(){
+		ArrayList<Training> trainings = new ArrayList<>();
+		trainings.add(new Training(new User("Alex"), LocalDateTime.now(), TrainingType.CALISTHENICS, 45, 12));
+		trainings.add(new Training(new User("Camilla"), LocalDateTime.now(), TrainingType.SWIMMING, 55, 23));
+		
+		return trainings;
+	}
+	
+}
